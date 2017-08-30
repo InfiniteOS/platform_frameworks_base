@@ -275,6 +275,12 @@ public final class Settings {
             "android.settings.metadata.USAGE_ACCESS_REASON";
 
     /**
+     - Change volume up and down handlign based on rotation
+     * @hide
+     */
+    public static final String SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
+
+    /**
      * Activity Action: Show settings to allow configuration of security and
      * location privacy.
      * <p>
@@ -4048,6 +4054,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(LOCK_TO_APP_ENABLED);
             PRIVATE_SETTINGS.add(EGG_MODE);
             PRIVATE_SETTINGS.add(SHOW_BATTERY_PERCENT);
+            PRIVATE_SETTINGS.add(SWAP_VOLUME_BUTTONS);
         }
 
         /**
