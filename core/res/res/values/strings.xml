@@ -2873,6 +2873,9 @@
     <string name="smv_process">The process <xliff:g id="process">%1$s</xliff:g> has
       has violated its self-enforced StrictMode policy.</string>
 
+    <!-- Vendor mismatched fingerprint warning [CHAR LIMIT=NONE] -->
+    <string name="system_error_vendorprint">Your vendor image does not match the system. Please flash the <xliff:g id="string">%s</xliff:g> vendor image for your device.</string>
+
     <!-- [CHAR LIMIT=40] Title of dialog that is shown when performing a system upgrade. -->
     <string name="android_upgrading_title">Android is upgrading\u2026</string>
 
