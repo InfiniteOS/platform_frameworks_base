@@ -3133,6 +3133,12 @@ public final class Settings {
         private static final Validator VIBRATE_INPUT_DEVICES_VALIDATOR = sBooleanValidator;
 
         /**
+         - Whether to enable torch on lockscreen
+         * @hide\
+         */
+        private static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
+
+        /**
          * Ringer volume. This is used internally, changing this value will not
          * change the volume. See AudioManager.
          *
