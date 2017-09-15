@@ -278,7 +278,7 @@ public final class Settings {
      - Change volume up and down handlign based on rotation
      * @hide
      */
-    public static final String SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
+    //public static final String SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
 
     /**
      * Activity Action: Show settings to allow configuration of security and
@@ -2034,6 +2034,12 @@ public final class Settings {
         }
 
         /**
+         * Change volume up and down handlign based on rotation
+         * @hide
+         */
+        public static final String SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
+
+        /**
          * The content:// style URL for this table
          */
         public static final Uri CONTENT_URI =
@@ -3131,6 +3137,12 @@ public final class Settings {
         public static final String VIBRATE_INPUT_DEVICES = "vibrate_input_devices";
 
         private static final Validator VIBRATE_INPUT_DEVICES_VALIDATOR = sBooleanValidator;
+
+        /**
+         - Whether to enable torch on lockscreen
+         * @hide\
+         */
+        private static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
 
         /**
          * Ringer volume. This is used internally, changing this value will not
