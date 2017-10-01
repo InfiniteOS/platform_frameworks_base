@@ -1890,13 +1890,18 @@ public class PhoneWindow extends Window implements MenuBuilder.Callback {
                     final boolean swapKeys = Settings.System.getInt(getContext().getContentResolver(),
                             Settings.System.SWAP_VOLUME_BUTTONS, 0) == 1;
 
-                    if (swapKeys
-                            && (rotation == Surface.ROTATION_90 || rotation == Surface.ROTATION_180)
-                            && config.getLayoutDirection() == View.LAYOUT_DIRECTION_LTR) {
-                        direction = keyCode == KeyEvent.KEYCODE_VOLUME_UP
-                                ? AudioManager.ADJUST_LOWER
-                                : AudioManager.ADJUST_RAISE;
-                    }
+                    if (swapKeys){
+                            if(rotation == Surface.ROTATION_90 || rotation == Surface.ROTATION_180){
+                                if(config.getLayoutDirection() == View.LAYOUT_DIRECTION_LTR) {
+                                   direction = keyCode == KeyEvent.KEYCODE_VOLUME_UP
+                                   ? AudioManager.ADJUST_LOWER
+                                   : AudioManager.ADJUST_RAISE;
+                                }
+								else Log.d("zeromod","config is null");
+							}
+							else Log.d("zeromod","rotation null");
+					}	
+					else Log.d("zeromod","swapkey null");
                     mMediaController.adjustVolume(direction, AudioManager.FLAG_SHOW_UI);
                 } else {
                     MediaSessionLegacyHelper.getHelper(getContext()).sendVolumeKeyEvent(

@@ -1253,14 +1253,20 @@ public class MediaSessionService extends SystemService implements Monitor {
                     final boolean swapKeys = Settings.System.getIntForUser(getContext().getContentResolver(),
                             Settings.System.SWAP_VOLUME_BUTTONS, 0, UserHandle.USER_CURRENT) == 1;
 
-                    if (swapKeys
-                            && (rotation == Surface.ROTATION_90 || rotation == Surface.ROTATION_180)
-                            && config.getLayoutDirection() == View.LAYOUT_DIRECTION_LTR) {
-                        direction = keyEvent.getKeyCode() == KeyEvent.KEYCODE_VOLUME_UP
-                                ? AudioManager.ADJUST_LOWER
-                                : AudioManager.ADJUST_RAISE;
-                    }
+                    if (swapKeys){
+                            if(rotation == Surface.ROTATION_90 || rotation == Surface.ROTATION_180){
+                                if(config.getLayoutDirection() == View.LAYOUT_DIRECTION_LTR) {
+                                   direction = keyCode == KeyEvent.KEYCODE_VOLUME_UP
+                                   ? AudioManager.ADJUST_LOWER
+                                   : AudioManager.ADJUST_RAISE;
+                                }
+								else Log.d("zeromod_mss","config is null");
+							}
+							else Log.d("zeromod_mss","rotation null");
+					}	
+					else Log.d("zeromod_mss","swapkey null");
                 }
+				else Log.d("zeromod_mss","wm is null");
                 int flags = AudioManager.FLAG_FROM_KEY;
                 if (musicOnly) {
                     // This flag is used when the screen is off to only affect active media.
