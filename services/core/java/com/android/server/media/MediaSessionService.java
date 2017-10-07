@@ -1256,7 +1256,7 @@ public class MediaSessionService extends SystemService implements Monitor {
                     if (swapKeys){
                             if(rotation == Surface.ROTATION_90 || rotation == Surface.ROTATION_180){
                                 if(config.getLayoutDirection() == View.LAYOUT_DIRECTION_LTR) {
-                                   direction = keyCode == KeyEvent.KEYCODE_VOLUME_UP
+                                   direction = keyEvent.getKeyCode() == KeyEvent.KEYCODE_VOLUME_UP
                                    ? AudioManager.ADJUST_LOWER
                                    : AudioManager.ADJUST_RAISE;
                                 }
